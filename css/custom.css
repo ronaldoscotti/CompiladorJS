@@ -1,0 +1,75 @@
+
+body {
+    font-family: "Roboto";
+    background-color: #f8f8f8
+}
+
+* {
+    outline: none !important;
+}
+
+.espaco {
+    clear: both;
+    height: 20px;
+}
+
+.btn {
+    transition: all 0.6s;
+}
+
+.navbar-brand span {
+    color: #f2dede;
+    transition: all 0.8s;
+}
+
+.navbar-brand span:hover {
+    color: #ffffff;
+}
+
+.navbar-brand span i {
+    color: #ffb400;
+    transition: all 0.8s;
+}
+
+.navbar-brand span:hover i {
+    color: #ff6c00;
+}
+
+.navbar-nav li a {
+    transition: all 0.8s;
+}
+
+.dark-bg {
+    background-color: #1B1B1B;
+    color: #f2dede
+}
+
+.code {
+    font-family: 'Ubuntu Mono';
+    overflow: auto;
+}
+
+#resultados {
+    display: none;
+}
+
+h2 span i {
+    color: #ffb400;
+}
+
+.form-control {
+    background-color: #222;
+    color: #f2dede;
+}
+
+#taSourceCode {
+    color: rgba(255, 175, 5, 0.88);
+}
+
+.footer {
+    color: #888;
+}
+
+p {
+    text-align: justify;
+}

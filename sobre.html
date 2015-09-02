@@ -1,0 +1,72 @@
+<!-- Sobre -->
+<div class="modal fade" id="Comandos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     xmlns="http://www.w3.org/1999/html">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header dark-bg">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel"><span><i class="glyphicon glyphicon-question-sign"></i> Conheça a Linguagem FireScript</span></h4>
+            </div>
+            <div class="modal-body">
+
+                <h4><span><small><i class="glyphicon glyphicon-info-sign"></i></small></span> Sobre a Linguagem</h4>
+                <hr>
+                <p>Esta é uma linguagem simples, baseada na linguagem de programação C. Abaixo foi colocada uma simples
+                    descrição
+                    de como iniciar a programação em FireScript.</p>
+
+                <div class="espaco"></div>
+
+                <h4><span><small><i class="glyphicon glyphicon-tasks"></i></small></span> Comandos</h4>
+                <hr>
+                <p>O programa deve ser iniciado com <code>{</code> e finalizado com <code>}</code>.</p>
+
+                <p><strong>Declaração de variáveis</strong> - Ocorre da seguinte forma <code>nome_variavel <strong>tipo</strong></code>.
+                    O nome da variável deve ter apenas 1 caractere, sendo letra. Os tipos podem ser <code>int, string ou
+                        boolean</code>.
+                </p>
+
+                <p><strong>Atribuições</strong> - Funcionam assim: <code>nome_varivel = valor</code>, sendo que valor podem ser expressões
+                    matémáticas,
+                    como no seguinte exemplo: <code>a = 1+2+3+4+5</code>.</p>
+
+                <p>Para se exibir em tela o valor de uma variável é usado o comando <code>show(nome_variavel)</code>.
+                </p>
+
+                <p><strong>If</strong> - O comando if é usado da seguinte forma: <code>if(condicao_um ==
+                    condicao_dois)</code>.
+                    após a declaração da condição, é necessário abrir chaves, e no fim fechar chaves <code>{ ...
+                        }</code>. Dentro
+                    das chaves, vai o que deve acontecer caso a condição seja verdadeira. Como no exemplo abaixo: <br/>
+                    <code> if( a == b ) { <br/>
+                        &nbsp;&nbsp;&nbsp;int c <br/>
+                        &nbsp;&nbsp;&nbsp;c = 2 + a <br/>
+                        &nbsp;&nbsp;&nbsp;show(c) <br/>
+                        }</code>
+                </p>
+
+                <p><strong>While</strong> - O laço de repetição while é representado da seguinte forma: <code>
+                    while(condicao_um == condicao_dois)</code>após a declaração da condição, é necessário abrir chaves,
+                    e no fim fechar chaves <code>{ ...
+                        }</code>. Dentro das chaves, deve ser colocado o que deve acontecer enquanto a condição for verdadeira.
+                    Como no exemplo abaixo: <br/>
+                    <code> while( a == b ) { <br/>
+                        &nbsp;&nbsp;&nbsp;string c <br/>
+                        &nbsp;&nbsp;&nbsp;c = "compilador" <br/>
+                        &nbsp;&nbsp;&nbsp;show(c) <br/>
+                        }</code>
+                </p>
+
+                <div class="espaco"></div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">
+                    <span>Fechar <i class="glyphicon glyphicon-remove"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

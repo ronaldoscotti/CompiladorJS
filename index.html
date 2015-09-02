@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html ng-app="Compilador">
+<head>
+    <title>Compilador FireScript</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
+    <!-- Fontes -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+</head>
+<body onload="init();">
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <span>
+                    <i class="glyphicon glyphicon-fire"></i>
+                    FireScript Compiler
+                </span>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#Exemplos">
+                        <span><i class="glyphicon glyphicon-eye-open"></i>&ensp;Exemplos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#Comandos">
+                        <span><i class="glyphicon glyphicon-question-sign"></i>&ensp;Aprenda</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Importando html externo com AngularJS -->
+<div ng-include="'sobre.html'"></div>
+<div ng-include="'exemplos.html'"></div>
+
+<div class="container" ng-controller="CompiladorCtrl as compilador">
+
+    <h2><span><i class="glyphicon glyphicon-fire"></i> FireScript Compiler</span></h2>
+    <hr>
+
+    <button class="btn btn-md btn-success" id="btnCompile" onclick="acaoBotaoCompilar();">
+        <span><i class="glyphicon glyphicon-play"></i>&nbsp; Compilar!</span>
+    </button>
+
+    <button class="btn btn-md btn-info" onclick="document.location.reload(true)">
+        <span><i class="glyphicon glyphicon-refresh"></i>&nbsp; Limpar</span>
+    </button>
+    <div class="espaco"></div>
+
+    <div class="textAreas">
+
+        <div class="col-md-12">
+            <div class="row">
+                <h4><span><small><i class="glyphicon glyphicon-list-alt"></i></small> Código-Fonte</span></h4>
+                <textarea class="form-control code" id="taSourceCode" placeholder="Seu código aqui."
+                          rows="10"></textarea>
+
+                <div class="espaco"></div>
+                <div id="resultados">
+                    <div ng-repeat="entrada in compilador.entradas">
+                        <h4><span><small><i class="glyphicon glyphicon-chevron-right"></i>
+                        </small> {{entrada.titulo}}</span></h4>
+                        <textarea class="form-control code" id="{{entrada.id}}" placeholder="{{entrada.placeHolder}}"
+                                  rows="10"></textarea>
+
+                        <div class="espaco"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="espaco"></div>
+    <hr>
+    <p class="text-right footer">
+        <small>FireScript Compiler - Unifacvest 2014 &copy;</small>
+    </p>
+
+</div>
+<!-- Footer -->
+
+<!-- Client-side code down here, per the YSlow advice.
+// (http://developer.yahoo.com/performance/rules.html#js_bottom) -->
+
+<script>
+    function acaoBotaoCompilar() {
+        exibeResto();
+        esconde('#btnCompile');
+        run();
+    }
+
+    function exibeResto() {
+        $('#resultados').show('slow');
+    }
+
+    function esconde($divId) {
+        $($divId).hide();
+    }
+</script>
+
+<script type="text/javascript" src="scripts/token.js"></script>
+<script type="text/javascript" src="scripts/identifier.js"></script>
+<script type="text/javascript" src="scripts/tree.js"></script>
+<script type="text/javascript" src="scripts/scope.js"></script>
+<script type="text/javascript" src="scripts/ast.js"></script>
+<script type="text/javascript" src="scripts/globals.js"></script>
+<script type="text/javascript" src="scripts/utils.js"></script>
+<script type="text/javascript" src="scripts/staticTable.js"></script>
+<script type="text/javascript" src="scripts/jumpTable.js"></script>
+<script type="text/javascript" src="scripts/codeGen.js"></script>
+<script type="text/javascript" src="scripts/lexer.js"></script>
+<script type="text/javascript" src="scripts/parser.js"></script>
+<script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>
