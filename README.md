@@ -1,10 +1,68 @@
-Compiler
+CompiladorJS
 ========
 
-A simple Compiler written in JavaScript.
+Um compilador simples escrito em JavaScript.
 
-Scope:
-If there is only one statement the the scope level will  be 0.
+Baseado em: https://github.com/kristofer-escobar/Compiler
 
-It there is a statement list inside a statement then there will be multiple levels of scope. The first scope level will be zero as well, but the first introduction of open and close curly braces will immediately make the scope level 1.
+Exemplos de código:
 
+```
+// Deve gerar: 0
+{
+  int a
+  string b
+  show(a) 
+  show(b)
+}
+
+//Deve Gerar: 15teste
+{
+  int a
+  string b
+  a = 1+2+3+4+5
+  b = "teste"
+  show(a)
+  show(b)
+}
+
+//Deve Gerar: 20compilador
+{
+  int a
+  string b
+  int c
+  string d
+  c = 5
+  a = 1+2+3+4+5+c
+  b = "teste"
+  d = "compilador"
+  show(a)
+  show(d)
+}
+
+//Deve Gerar: 7
+{
+  int a
+  int b
+  a = 5
+  b = 2 +3
+  if( a == b ) { 
+    int c
+    c = 2 + a
+    show(c)
+  }
+}
+
+//Deve fazer um loop enquanto imprime: compilador
+{
+  int a
+  int b
+  a = 8
+  b = 2 + 6
+  while( a == b ) { 
+    string c
+    c = "compilador"
+    show(c)
+  }
+}
+```
